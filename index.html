@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EatLog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>EatLog</h1>
+        <p>Track what you eat, when you ate it, and how it made you feel.</p>
+      </header>
+
+      <section class="entry-form">
+        <div class="field">
+          <label for="meal">Meal</label>
+          <input id="meal" name="meal" type="text" placeholder="Chicken salad" />
+        </div>
+        <div class="field">
+          <label for="notes">Notes</label>
+          <input id="notes" name="notes" type="text" placeholder="Extra dressing on the side" />
+        </div>
+        <div class="field">
+          <label for="time">Time</label>
+          <input id="time" name="time" type="datetime-local" />
+        </div>
+        <div class="field">
+          <label for="mood">Mood</label>
+          <select id="mood" name="mood">
+            <option value="">Select</option>
+            <option>Great</option>
+            <option>Good</option>
+            <option>Okay</option>
+            <option>Low energy</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button id="add-entry" type="button">Add Entry</button>
+          <button id="clear-form" type="button" class="secondary">Clear</button>
+        </div>
+      </section>
+
+      <section class="summary">
+        <div>
+          <h2>Today</h2>
+          <p id="today-count">0 entries</p>
+        </div>
+        <div>
+          <h2>Most recent</h2>
+          <p id="recent-entry">Add your first meal.</p>
+        </div>
+      </section>
+
+      <section class="entries">
+        <div class="entries-header">
+          <h2>Meal log</h2>
+          <div class="entries-actions">
+            <button id="sort-newest" type="button" class="secondary">Newest</button>
+            <button id="sort-oldest" type="button" class="secondary">Oldest</button>
+          </div>
+        </div>
+        <ul id="entries-list"></ul>
+      </section>
+    </div>
+
+    <template id="entry-template">
+      <li class="entry">
+        <div>
+          <h3 class="entry-meal"></h3>
+          <p class="entry-notes"></p>
+        </div>
+        <div class="entry-meta">
+          <span class="entry-time"></span>
+          <span class="entry-mood"></span>
+        </div>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
